@@ -17,7 +17,7 @@ struct ContentView: View {
                 LazyVStack(spacing: 0) {
                     ForEach(images, id: \.self) { imageName in
                         NavigationLink(
-                            destination: SecondView(imageName: imageName),
+                            destination: MapView(imageName: imageName),
                             tag: imageName,
                             selection: $selectedImage
                         ) {
@@ -40,11 +40,12 @@ struct ContentView: View {
                 }
                 .scrollTargetBehavior(.viewAligned)
             }
-            .background(Color.gray)
+            .background(Color.brown)
             .navigationViewStyle(.stack)
-            .navigationTitle(Text("Choose any map")
+            .navigationTitle(Text("Maps")
                 .bold()
                 .font(.largeTitle))
+            
         }
     }
 }
