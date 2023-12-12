@@ -45,7 +45,7 @@ struct ContentView: View {
             .navigationTitle(Text("Maps")
                 .bold()
                 .font(.largeTitle))
-            
+
         }
     }
 }
