@@ -36,21 +36,27 @@ struct MapView: View {
             button2
         ],
         "Vertigo": [
-            button1
+            button1,
+            buttonM1,
+            buttonM2,
+            buttonM3,
+            buttonM4,
+            buttonM5
         ]
     ]
     
     @State private var isShowingVideoView = false // Yeni durum değişkeni, sheet'i göstermek için
     @State private var selectedVideoURL: String? // Seçilen video URL'sini tutacak değişken
-        
+    @State private var isRightButtonVisible = false
+
         var body: some View {
             NavigationView {
-                VStack {
+                LazyVStack {
                     Image("\(imageName)Map")
                         .resizable()
                         .scaledToFit()
                     ScrollView(.vertical){
-                        VStack {
+                        LazyVStack {
                             ForEach(mapButtons[imageName] ?? [], id: \.self) { buttonData in
                                 VStack{
                                     Button(action: {
@@ -77,12 +83,12 @@ struct MapView: View {
                 }
                 .background(
                     LinearGradient(
-                        gradient: Gradient(colors: [.brown, .blue]),
+                        gradient: Gradient(colors: [.black, .blue]),
                         startPoint: .topLeading,
                         endPoint: .bottomTrailing
                     )
                 )
-                .navigationTitle(imageName)
+                .navigationBarTitle(Text(""), displayMode: .inline)
                 .sheet(isPresented: $isShowingVideoView, content: {
                     if let videoURL = selectedVideoURL {
                         VideoView(videoURL: videoURL)
@@ -93,5 +99,5 @@ struct MapView: View {
     }
 
 #Preview {
-    MapView(imageName:"Mirage")
+    MapView(imageName:"Vertigo")
 }

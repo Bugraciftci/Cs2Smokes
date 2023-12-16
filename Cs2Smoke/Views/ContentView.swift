@@ -10,7 +10,6 @@ import SwiftUI
 struct ContentView: View {
     let images = ["Ancient", "Anubis", "Inferno", "Mirage", "Nuke", "Overpass", "Vertigo"]
     @State private var selectedImage: String?
-    
     var body: some View {
         NavigationView {
             ScrollView(.vertical) {
@@ -32,19 +31,24 @@ struct ContentView: View {
                                     .shadow(radius: 5)
                                     .font(.system(size: 36))
                                     .fontWeight(.heavy), alignment: .center)
+                                    
                         }
                         .simultaneousGesture(TapGesture().onEnded {
                             selectedImage = imageName
                         })
                     }
                 }
-                .scrollTargetBehavior(.viewAligned)
             }
-            .background(Color.brown)
+            .background( LinearGradient(
+                gradient: Gradient(colors: [.blue, .black]),
+                startPoint: .topLeading,
+                endPoint: .bottomTrailing
+            ))
             .navigationViewStyle(.stack)
             .navigationTitle(Text("Maps")
-                .bold()
-                .font(.largeTitle))
+                .font(.largeTitle.bold())
+                .foregroundColor(.red) // Başlık rengini buradan değiştirebilirsin
+            )
 
         }
     }

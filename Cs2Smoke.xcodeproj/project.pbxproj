@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		136280522B2E42190005FAE3 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 136280512B2E42180005FAE3 /* SettingsView.swift */; };
 		13AF3D772B24FAEF00A16CFE /* Cs2SmokeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13AF3D762B24FAEF00A16CFE /* Cs2SmokeApp.swift */; };
 		13AF3D792B24FAEF00A16CFE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13AF3D782B24FAEF00A16CFE /* ContentView.swift */; };
 		13AF3D7B2B24FAF100A16CFE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13AF3D7A2B24FAF100A16CFE /* Assets.xcassets */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		136280512B2E42180005FAE3 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		13AF3D732B24FAEF00A16CFE /* Cs2Smoke.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cs2Smoke.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13AF3D762B24FAEF00A16CFE /* Cs2SmokeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cs2SmokeApp.swift; sourceTree = "<group>"; };
 		13AF3D782B24FAEF00A16CFE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -80,6 +82,7 @@
 				13AF3D782B24FAEF00A16CFE /* ContentView.swift */,
 				13AF3D842B2501C100A16CFE /* MapView.swift */,
 				13AF3D8B2B27C26000A16CFE /* VideoView.swift */,
+				136280512B2E42180005FAE3 /* SettingsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -154,6 +157,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				136280522B2E42190005FAE3 /* SettingsView.swift in Sources */,
 				13AF3D8E2B27C38E00A16CFE /* ButtonData.swift in Sources */,
 				13AF3D8C2B27C26000A16CFE /* VideoView.swift in Sources */,
 				13AF3D852B2501C100A16CFE /* MapView.swift in Sources */,
@@ -300,6 +304,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -329,6 +334,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
