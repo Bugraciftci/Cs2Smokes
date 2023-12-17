@@ -11,37 +11,66 @@ struct MapView: View {
     
     let imageName: String
     let mapButtons: [String: [ButtonData]] = [
-        "Ancient": [
-            button1,button2,button3
+        "Ancient": [ 
+            buttonAC1,
+            buttonAC2,
+            buttonAC3,
+            buttonAC4,
+            buttonAC5,
+            buttonAC6,
+            buttonAC7
         ],
         "Anubis": [
-            button2
+            buttonAU1,
+            buttonAU2,
+            buttonAU3,
+            buttonAU4,
+            buttonAU5,
+            buttonAU6
         ],
         "Inferno": [
-            button1
+            buttonIN1,
+            buttonIN2,
+            buttonIN3,
+            buttonIN4,
+            buttonIN5,
+            buttonIN6,
+            buttonIN7,
+            buttonIN8
         ],
         "Mirage": [
-            buttonM1,
-            buttonM2,
-            buttonM3,
-            buttonM4,
-            buttonM5,
-            buttonM6,
-            buttonM7
+            buttonMI1,
+            buttonMI2,
+            buttonMI3,
+            buttonMI4,
+            buttonMI5,
+            buttonMI6,
+            buttonMI7
         ],
         "Nuke": [
-            button1
+            buttonNU1,
+            buttonNU2,
+            buttonNU3,
+            buttonNU4,
+            buttonNU5
         ],
         "Overpass": [
-            button2
+            buttonOV1,
+            buttonOV2,
+            buttonOV3,
+            buttonOV4,
+            buttonOV5,
+            buttonOV6,
+            buttonOV7,
+            buttonOV8
         ],
         "Vertigo": [
-            button1,
-            buttonM1,
-            buttonM2,
-            buttonM3,
-            buttonM4,
-            buttonM5
+            buttonVE1,
+            buttonVE2,
+            buttonVE3,
+            buttonVE4,
+            buttonVE5,
+            buttonVE6
         ]
     ]
     

@@ -11,7 +11,24 @@ import SwiftUI
 struct Cs2SmokeApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            TabView {
+                ContentView()
+                    .tabItem {
+                        Image(systemName: "map")
+                        Text("Home")
+                    }
+                    .tag(0)
+                
+                SettingsView()
+                    .tabItem {
+                        Image(systemName: "gearshape.fill")
+                        Text("Settings")
+                    }
+                    .tag(1)
+            
+                // Diğer sekmeleri buraya ekleyebilirsiniz
+            }
         }
     }
 }
+

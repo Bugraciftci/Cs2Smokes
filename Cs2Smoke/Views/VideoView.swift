@@ -25,5 +25,5 @@ struct VideoView: UIViewRepresentable {
 }
 
 #Preview {
-    VideoView (videoURL: buttonM1.videoURL)
+    VideoView (videoURL: buttonMI1.videoURL)
 }

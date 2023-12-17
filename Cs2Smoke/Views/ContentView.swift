@@ -27,10 +27,12 @@ struct ContentView: View {
                                 .clipShape(RoundedRectangle(cornerRadius: 25.0))
                                 .padding(.vertical, 20)
                                 .overlay(Text(imageName.uppercased())
+                                    .fontWeight(.heavy)
                                     .foregroundColor(.white)
                                     .shadow(radius: 5)
                                     .font(.system(size: 36))
-                                    .fontWeight(.heavy), alignment: .center)
+
+                                )
                                     
                         }
                         .simultaneousGesture(TapGesture().onEnded {
@@ -39,20 +41,17 @@ struct ContentView: View {
                     }
                 }
             }
-            .background( LinearGradient(
+            .background(LinearGradient(
                 gradient: Gradient(colors: [.blue, .black]),
                 startPoint: .topLeading,
                 endPoint: .bottomTrailing
             ))
             .navigationViewStyle(.stack)
-            .navigationTitle(Text("Maps")
-                .font(.largeTitle.bold())
-                .foregroundColor(.red) // Başlık rengini buradan değiştirebilirsin
-            )
-
+            .navigationTitle(Text("Maps"))
         }
     }
 }
+
 #Preview {
     ContentView()
 }
