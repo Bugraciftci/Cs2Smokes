@@ -40,6 +40,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		134FFFF82B2FD5D900665908 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				13AF3D8D2B27C38E00A16CFE /* ButtonData.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
 		13AF3D6A2B24FAEF00A16CFE = {
 			isa = PBXGroup;
 			children = (
@@ -61,9 +69,9 @@
 			children = (
 				13AF3D762B24FAEF00A16CFE /* Cs2SmokeApp.swift */,
 				13AF3D862B25D44800A16CFE /* Views */,
+				134FFFF82B2FD5D900665908 /* Data */,
 				13AF3D7A2B24FAF100A16CFE /* Assets.xcassets */,
 				13AF3D7C2B24FAF100A16CFE /* Preview Content */,
-				13AF3D8D2B27C38E00A16CFE /* ButtonData.swift */,
 			);
 			path = Cs2Smoke;
 			sourceTree = "<group>";

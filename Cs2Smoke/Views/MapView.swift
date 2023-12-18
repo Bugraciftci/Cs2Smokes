@@ -76,57 +76,38 @@ struct MapView: View {
     
     @State private var isShowingVideoView = false // Yeni durum değişkeni, sheet'i göstermek için
     @State private var selectedVideoURL: String? // Seçilen video URL'sini tutacak değişken
-    @State private var isRightButtonVisible = false
 
-        var body: some View {
-            NavigationView {
-                LazyVStack {
+    var body: some View {
+        NavigationView {
+            ZStack {
+                // Linear gradient arka planı değiştirelebilir Full Siyah Şimdilik
+                LinearGradient(gradient: Gradient(colors: [.black, .black]), startPoint: .topLeading, endPoint: .bottomTrailing)
+                    .edgesIgnoringSafeArea(.all)
+                VStack {
                     Image("\(imageName)Map")
                         .resizable()
                         .scaledToFit()
-                    ScrollView(.vertical){
-                        LazyVStack {
-                            ForEach(mapButtons[imageName] ?? [], id: \.self) { buttonData in
-                                VStack{
-                                    Button(action: {
-                                        selectedVideoURL = buttonData.videoURL // Seçilen butona tıklandığında ilgili video URL'sini al
-                                        isShowingVideoView = true // Sheet'i göster
-                                    }) {
-                                        Text(buttonData.title)
-                                            .font(.system(size: 20))
-                                            .fontWeight(.medium)
-                                            .foregroundColor(.white)
-                                            .frame(maxWidth: 200, alignment: .center)
-                                            .padding(EdgeInsets(top: 10, leading: 10, bottom: 10, trailing: 0))
-                                            .background(Color.blue)
-                                            .cornerRadius(20)
-                                            .shadow(radius: 8)
-                                        Spacer()
-                                    }
-                                    .padding(5)
-                                    Spacer()
-                                }
+                    List {
+                        ForEach(mapButtons[imageName] ?? [], id: \.self) { buttonData in
+                            Button(action: {
+                                selectedVideoURL = buttonData.videoURL
+                                isShowingVideoView = true
+                            })
+                            { Text(buttonData.title)
                             }
                         }
                     }
                 }
-                .background(
-                    LinearGradient(
-                        gradient: Gradient(colors: [.black, .blue]),
-                        startPoint: .topLeading,
-                        endPoint: .bottomTrailing
-                    )
-                )
-                .navigationBarTitle(Text(""), displayMode: .inline)
+            }
+        }
                 .sheet(isPresented: $isShowingVideoView, content: {
                     if let videoURL = selectedVideoURL {
                         VideoView(videoURL: videoURL)
-                    }
-                })
+                    }})
             }
         }
-    }
+    
 
 #Preview {
-    MapView(imageName:"Vertigo")
+    MapView(imageName:"Inferno")
 }
