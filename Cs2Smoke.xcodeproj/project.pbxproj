@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		136280522B2E42190005FAE3 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 136280512B2E42180005FAE3 /* SettingsView.swift */; };
+		136B44F12B32169D00E73EAD /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 136B44F02B32169D00E73EAD /* OnboardingView.swift */; };
 		13AF3D772B24FAEF00A16CFE /* Cs2SmokeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13AF3D762B24FAEF00A16CFE /* Cs2SmokeApp.swift */; };
 		13AF3D792B24FAEF00A16CFE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13AF3D782B24FAEF00A16CFE /* ContentView.swift */; };
 		13AF3D7B2B24FAF100A16CFE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13AF3D7A2B24FAF100A16CFE /* Assets.xcassets */; };
@@ -15,10 +16,12 @@
 		13AF3D852B2501C100A16CFE /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13AF3D842B2501C100A16CFE /* MapView.swift */; };
 		13AF3D8C2B27C26000A16CFE /* VideoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13AF3D8B2B27C26000A16CFE /* VideoView.swift */; };
 		13AF3D8E2B27C38E00A16CFE /* ButtonData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13AF3D8D2B27C38E00A16CFE /* ButtonData.swift */; };
+		13F4130A2B3227500011FCDF /* OnboardingData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13F413092B3227500011FCDF /* OnboardingData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		136280512B2E42180005FAE3 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		136B44F02B32169D00E73EAD /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		13AF3D732B24FAEF00A16CFE /* Cs2Smoke.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cs2Smoke.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13AF3D762B24FAEF00A16CFE /* Cs2SmokeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cs2SmokeApp.swift; sourceTree = "<group>"; };
 		13AF3D782B24FAEF00A16CFE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -27,6 +30,7 @@
 		13AF3D842B2501C100A16CFE /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		13AF3D8B2B27C26000A16CFE /* VideoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoView.swift; sourceTree = "<group>"; };
 		13AF3D8D2B27C38E00A16CFE /* ButtonData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonData.swift; sourceTree = "<group>"; };
+		13F413092B3227500011FCDF /* OnboardingData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,6 +48,7 @@
 			isa = PBXGroup;
 			children = (
 				13AF3D8D2B27C38E00A16CFE /* ButtonData.swift */,
+				13F413092B3227500011FCDF /* OnboardingData.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -69,6 +74,7 @@
 			children = (
 				13AF3D762B24FAEF00A16CFE /* Cs2SmokeApp.swift */,
 				13AF3D862B25D44800A16CFE /* Views */,
+				13F413082B3220020011FCDF /* Onboarding */,
 				134FFFF82B2FD5D900665908 /* Data */,
 				13AF3D7A2B24FAF100A16CFE /* Assets.xcassets */,
 				13AF3D7C2B24FAF100A16CFE /* Preview Content */,
@@ -93,6 +99,14 @@
 				136280512B2E42180005FAE3 /* SettingsView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		13F413082B3220020011FCDF /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				136B44F02B32169D00E73EAD /* OnboardingView.swift */,
+			);
+			path = Onboarding;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -169,8 +183,10 @@
 				13AF3D8E2B27C38E00A16CFE /* ButtonData.swift in Sources */,
 				13AF3D8C2B27C26000A16CFE /* VideoView.swift in Sources */,
 				13AF3D852B2501C100A16CFE /* MapView.swift in Sources */,
+				13F4130A2B3227500011FCDF /* OnboardingData.swift in Sources */,
 				13AF3D792B24FAEF00A16CFE /* ContentView.swift in Sources */,
 				13AF3D772B24FAEF00A16CFE /* Cs2SmokeApp.swift in Sources */,
+				136B44F12B32169D00E73EAD /* OnboardingView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

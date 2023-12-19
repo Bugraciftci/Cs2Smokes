@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import StoreKit
 
 struct SettingsView: View {
     var body: some View {
@@ -21,9 +22,10 @@ struct SettingsView: View {
     
     private var aboutUsSection: some View {
         Section(header: Text("About us")) {
-            Button(action: {
-                rateApp()
-            }) {
+            
+            Button {
+                SKStoreReviewController.requestReview()
+            } label: {
                 Text("Rate us <3")
             }
             Button(action: {
@@ -32,14 +34,12 @@ struct SettingsView: View {
                 Text("Recommend us to your friends <3")
             }
         }
-        .foregroundColor(.black)
     }
     private var termsSection: some View {
         Section(header: Text("Terms")) {
             Link("Terms of use", destination: URL(string: "https://example.com/terms")!)
             Link("Privacy policy", destination: URL(string: "https://example.com/privacy")!)
         }
-        .foregroundColor(.black)
     }
     
     private var questionsSection: some View {
@@ -49,11 +49,6 @@ struct SettingsView: View {
         }
     }
 }
-    private func rateApp() {
-            guard let url = URL(string: "APP_STORE_LINK_TO_YOUR_APP") else { return }
-            UIApplication.shared.open(url, options: [:], completionHandler: nil)
-        }
-    
     private func recommendApp() {
         let textToShare = "Hey, check out this cool app!"
         let activityViewController = UIActivityViewController(activityItems: [textToShare], applicationActivities: nil)

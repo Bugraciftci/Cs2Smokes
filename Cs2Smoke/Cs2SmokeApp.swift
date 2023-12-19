@@ -14,7 +14,7 @@ struct Cs2SmokeApp: App {
             TabView {
                 ContentView()
                     .tabItem {
-                        Image(systemName: "map")
+                        Image(systemName: "house.fill")
                         Text("Home")
                     }
                     .tag(0)
@@ -25,8 +25,6 @@ struct Cs2SmokeApp: App {
                         Text("Settings")
                     }
                     .tag(1)
-            
-                // Diğer sekmeleri buraya ekleyebilirsiniz
             }
         }
     }

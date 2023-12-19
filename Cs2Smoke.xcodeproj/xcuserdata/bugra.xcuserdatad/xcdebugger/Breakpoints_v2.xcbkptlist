@@ -8,7 +8,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "19C039A1-AB73-400D-8DDA-6E8B84A3468A"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../../../../var/folders/2f/td7nytdd4f960jlv3sywb8r80000gn/T/swift-generated-sources/@__swiftmacro_8Cs2Smoke33_FEF030E32B849E3C261D4871AB839CC2Ll7PreviewfMf0_.swift"

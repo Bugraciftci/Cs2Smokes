@@ -81,12 +81,15 @@ struct MapView: View {
         NavigationView {
             ZStack {
                 // Linear gradient arka planı değiştirelebilir Full Siyah Şimdilik
-                LinearGradient(gradient: Gradient(colors: [.black, .black]), startPoint: .topLeading, endPoint: .bottomTrailing)
+                LinearGradient(gradient: Gradient(colors: [.black , .blue]), startPoint: .topLeading, endPoint: .bottomTrailing)
                     .edgesIgnoringSafeArea(.all)
                 VStack {
                     Image("\(imageName)Map")
                         .resizable()
-                        .scaledToFit()
+                        .scaledToFill()
+                        .frame(width: UIScreen.main.bounds.width * 0.9)
+                        .clipShape(RoundedRectangle(cornerRadius: 25.0))
+                        .padding()
                     List {
                         ForEach(mapButtons[imageName] ?? [], id: \.self) { buttonData in
                             Button(action: {
@@ -100,6 +103,7 @@ struct MapView: View {
                 }
             }
         }
+        .navigationViewStyle(StackNavigationViewStyle())
                 .sheet(isPresented: $isShowingVideoView, content: {
                     if let videoURL = selectedVideoURL {
                         VideoView(videoURL: videoURL)
@@ -109,5 +113,6 @@ struct MapView: View {
     
 
 #Preview {
-    MapView(imageName:"Inferno")
+    MapView(imageName:"Mirage")
+    
 }

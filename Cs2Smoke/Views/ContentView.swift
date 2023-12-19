@@ -8,9 +8,12 @@
 import SwiftUI
 
 struct ContentView: View {
+    
     let images = ["Ancient", "Anubis", "Inferno", "Mirage", "Nuke", "Overpass", "Vertigo"]
+    
     @State private var selectedImage: String?
     var body: some View {
+        
         NavigationView {
             ScrollView(.vertical) {
                 LazyVStack(spacing: 0) {
@@ -23,7 +26,7 @@ struct ContentView: View {
                             Image(imageName)
                                 .resizable()
                                 .scaledToFill()
-                                .frame(width: UIScreen.main.bounds.width * 0.84)
+                                .frame(width: UIScreen.main.bounds.width * 0.85)
                                 .clipShape(RoundedRectangle(cornerRadius: 25.0))
                                 .padding()
                                 .overlay(Text(imageName.uppercased())
@@ -49,6 +52,7 @@ struct ContentView: View {
             .navigationViewStyle(.stack)
             .navigationTitle(Text("Maps"))
         }
+        .navigationViewStyle(StackNavigationViewStyle())
     }
 }
 
