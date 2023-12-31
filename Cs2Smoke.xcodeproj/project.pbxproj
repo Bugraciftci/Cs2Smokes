@@ -16,7 +16,8 @@
 		13AF3D852B2501C100A16CFE /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13AF3D842B2501C100A16CFE /* MapView.swift */; };
 		13AF3D8C2B27C26000A16CFE /* VideoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13AF3D8B2B27C26000A16CFE /* VideoView.swift */; };
 		13AF3D8E2B27C38E00A16CFE /* ButtonData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13AF3D8D2B27C38E00A16CFE /* ButtonData.swift */; };
-		13F4130A2B3227500011FCDF /* OnboardingData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13F413092B3227500011FCDF /* OnboardingData.swift */; };
+		13BC2BC22B40881E00CE010E /* FavoritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13BC2BC12B40881E00CE010E /* FavoritesView.swift */; };
+		13BC2BC42B40892C00CE010E /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13BC2BC32B40892C00CE010E /* UserSettings.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,7 +31,8 @@
 		13AF3D842B2501C100A16CFE /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		13AF3D8B2B27C26000A16CFE /* VideoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoView.swift; sourceTree = "<group>"; };
 		13AF3D8D2B27C38E00A16CFE /* ButtonData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonData.swift; sourceTree = "<group>"; };
-		13F413092B3227500011FCDF /* OnboardingData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingData.swift; sourceTree = "<group>"; };
+		13BC2BC12B40881E00CE010E /* FavoritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesView.swift; sourceTree = "<group>"; };
+		13BC2BC32B40892C00CE010E /* UserSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettings.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,7 +50,7 @@
 			isa = PBXGroup;
 			children = (
 				13AF3D8D2B27C38E00A16CFE /* ButtonData.swift */,
-				13F413092B3227500011FCDF /* OnboardingData.swift */,
+				13BC2BC32B40892C00CE010E /* UserSettings.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -97,6 +99,7 @@
 				13AF3D842B2501C100A16CFE /* MapView.swift */,
 				13AF3D8B2B27C26000A16CFE /* VideoView.swift */,
 				136280512B2E42180005FAE3 /* SettingsView.swift */,
+				13BC2BC12B40881E00CE010E /* FavoritesView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -183,7 +186,8 @@
 				13AF3D8E2B27C38E00A16CFE /* ButtonData.swift in Sources */,
 				13AF3D8C2B27C26000A16CFE /* VideoView.swift in Sources */,
 				13AF3D852B2501C100A16CFE /* MapView.swift in Sources */,
-				13F4130A2B3227500011FCDF /* OnboardingData.swift in Sources */,
+				13BC2BC42B40892C00CE010E /* UserSettings.swift in Sources */,
+				13BC2BC22B40881E00CE010E /* FavoritesView.swift in Sources */,
 				13AF3D792B24FAEF00A16CFE /* ContentView.swift in Sources */,
 				13AF3D772B24FAEF00A16CFE /* Cs2SmokeApp.swift in Sources */,
 				136B44F12B32169D00E73EAD /* OnboardingView.swift in Sources */,

@@ -9,6 +9,9 @@ import SwiftUI
 
 @main
 struct Cs2SmokeApp: App {
+    // Create an instance of UserSettings
+    var userSettings = UserSettings()
+    
     var body: some Scene {
         WindowGroup {
             TabView {
@@ -19,13 +22,21 @@ struct Cs2SmokeApp: App {
                     }
                     .tag(0)
                 
+                FavoritesView() // New Favorites Tab
+                    .tabItem {
+                        Image(systemName: "star.fill")
+                        Text("Favorites")
+                    }
+                    .tag(1)
+                
                 SettingsView()
                     .tabItem {
                         Image(systemName: "gearshape.fill")
                         Text("Settings")
                     }
-                    .tag(1)
+                    .tag(2)
             }
+            .environmentObject(userSettings)
         }
     }
 }

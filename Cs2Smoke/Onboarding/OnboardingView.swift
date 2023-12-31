@@ -1,37 +1,69 @@
-//
-//  PageView.swift
-//  SlidingIntroScreen
-//
-//  Created by Federico on 18/03/2022.
-//
-
+//import SwiftUI
 import SwiftUI
 
-struct PageView: View {
-    var page: Page
-    
+struct OnboardingView: View {
+    @Binding var showOnboarding: Bool
+    let pages = [
+        Page(title : "ONB1", message: "Interested in learning how to throw a bomb and hit your target accurately?"),
+        Page(title : "ONB2", message: "Discover the secrets of accurate bomb throwing and surprise your opponents!"),
+        Page(title : "ONB3", message: "Ensure your victory by effectively using explosives!")
+    ]
+    @State private var currentPageIndex = 0
+
     var body: some View {
-        VStack(spacing: 10) {
-            Image("\(page.imageUrl)")
-                .resizable()
-                .scaledToFit()
-                .padding()
-                .cornerRadius(30)
-                .background(.gray.opacity(0.10))
-                .cornerRadius(10)
-                .padding()
-            
-            Text(page.name)
-                .font(.title)
-            Text(page.description)
-                .font(.subheadline)
-                .frame(width: 300)
+        VStack {
+            TabView(selection: $currentPageIndex) {
+                ForEach(0..<pages.count, id: \.self) { index in
+                    VStack {
+                        Image(pages[index].title)
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: UIScreen.main.bounds.width * 0.85)
+                            .clipShape(RoundedRectangle(cornerRadius: 25.0))
+                        
+                        Text(pages[index].message)
+                            .multilineTextAlignment(.center)
+                            .padding()
+                            .font(.title.bold())
+                    }
+                    .tag(index)
+                }
+            }
+            .tabViewStyle(PageTabViewStyle(indexDisplayMode: .automatic))
+            .indexViewStyle(PageIndexViewStyle(backgroundDisplayMode: .always))
+            .onAppear {
+                UIPageControl.appearance().currentPageIndicatorTintColor = .blue
+                UIPageControl.appearance().pageIndicatorTintColor = .gray
+            }
+
+            Button(action: {
+                withAnimation {
+                    if currentPageIndex < pages.count - 1 {
+                        currentPageIndex += 1
+                    } else {
+                        showOnboarding = false // Son sayfadaysa onboarding'i bitir
+                    }
+                }
+            }) {
+                Text(currentPageIndex < pages.count - 1 ? "Continue" : "Finish")
+                    .padding()
+                    .foregroundColor(.white)
+                    .background(Color.blue)
+                    .cornerRadius(8)
+            }
+            .padding()
         }
+        .background(Color.indigo)
     }
 }
 
-struct PageView_Previews: PreviewProvider {
-    static var previews: some View {
-        PageView(page: Page.samplePage)
-    }
+struct Page {
+    let title: String
+    let message: String
+}
+
+// ContentView içeriği...
+
+#Preview {
+    OnboardingView(showOnboarding: .constant(true))
 }
