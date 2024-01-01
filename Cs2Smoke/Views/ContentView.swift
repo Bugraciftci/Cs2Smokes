@@ -12,6 +12,8 @@ struct ContentView: View {
     let images = ["Ancient", "Anubis", "Inferno", "Mirage", "Nuke", "Overpass", "Vertigo"]
     
     @State private var selectedImage: String?
+    @StateObject private var userSettings = UserSettings() // Create UserSettings object
+
     var body: some View {
         
         NavigationView {

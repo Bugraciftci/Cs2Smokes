@@ -9,6 +9,8 @@ import SwiftUI
 
 struct MapView: View {
     
+    @EnvironmentObject var userSettings: UserSettings
+    
     let imageName: String
     let mapButtons: [String: [ButtonData]] = [
         "Ancient": [ 
@@ -74,13 +76,12 @@ struct MapView: View {
         ]
     ]
     
-    @State private var isShowingVideoView = false // Yeni durum değişkeni, sheet'i göstermek için
-    @State private var selectedVideoURL: String? // Seçilen video URL'sini tutacak değişken
+    @State private var isShowingVideoView = false
+    @State private var selectedVideoURL: String?
 
     var body: some View {
         NavigationView {
             ZStack {
-                // Linear gradient arka planı değiştirelebilir Full Siyah Şimdilik
                 LinearGradient(gradient: Gradient(colors: [.black , .blue]), startPoint: .topLeading, endPoint: .bottomTrailing)
                     .edgesIgnoringSafeArea(.all)
                 VStack {
@@ -95,15 +96,28 @@ struct MapView: View {
                             Button(action: {
                                 selectedVideoURL = buttonData.videoURL
                                 isShowingVideoView = true
-                            })
-                            { Text(buttonData.title)
+                            }) {
+                                HStack {
+                                    Text(buttonData.title)
+                                    Spacer()
+                                    Button(action: {
+                                        if userSettings.favoriteMaps.contains(buttonData.title) {
+                                            userSettings.removeFavorite(mapName: buttonData.title)
+                                        } else {
+                                            userSettings.addFavorite(mapName: buttonData.title)
+                                        }
+                                    }) {
+                                        Image(systemName: userSettings.favoriteMaps.contains(buttonData.title) ? "star.fill" : "star")
+                                            .foregroundColor(.yellow)
+                                    }
+                                }
                             }
                         }
                     }
-                }
-            }
-        }
-        .navigationViewStyle(StackNavigationViewStyle())
+                    
+                                    }
+                                }
+                            }        .navigationViewStyle(StackNavigationViewStyle())
                 .sheet(isPresented: $isShowingVideoView, content: {
                     if let videoURL = selectedVideoURL {
                         VideoView(videoURL: videoURL)
@@ -113,6 +127,5 @@ struct MapView: View {
     
 
 #Preview {
-    MapView(imageName:"Mirage")
-    
+    MapView(imageName:"Mirage").environmentObject(UserSettings())
 }
