@@ -7,11 +7,13 @@
 
 import Foundation
 
-struct ButtonData: Hashable, Codable {
+struct ButtonData: Hashable, Codable, Identifiable {
     let title: String
     let tag: Int
     let videoURL: String
+    var id = UUID()  // Benzersiz bir ID ekleyin
 }
+
 
 let buttonMI1 = ButtonData(title: "Mid Window Smoke", tag: 1, videoURL: "https://www.youtube.com/watch?v=9as2pq0bVA8")
 let buttonMI6 = ButtonData(title: "Mid Short Smoke", tag: 2, videoURL: "https://www.youtube.com/watch?v=9K4a_65aXqA")

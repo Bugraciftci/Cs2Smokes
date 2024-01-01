@@ -1,25 +1,35 @@
 import Foundation
 
 class UserSettings: ObservableObject {
-    @Published var favoriteMaps: Set<String> {
+    @Published var likedMaps: Set<ButtonData> = []
+    @Published var favoriteMaps: Set<ButtonData> {
         didSet {
             saveFavorites()
         }
     }
 
     init() {
-        self.favoriteMaps = Set(UserDefaults.standard.stringArray(forKey: "FavoriteMaps") ?? [])
+        // UserDefaults'tan veri alırken JSON olarak decode etmek
+        if let data = UserDefaults.standard.data(forKey: "FavoriteMaps"),
+           let decoded = try? JSONDecoder().decode(Set<ButtonData>.self, from: data) {
+            self.favoriteMaps = decoded
+        } else {
+            self.favoriteMaps = []
+        }
     }
 
     private func saveFavorites() {
-        UserDefaults.standard.set(Array(favoriteMaps), forKey: "FavoriteMaps")
+        // UserDefaults'a veri kaydederken JSON olarak encode etmek
+        if let encoded = try? JSONEncoder().encode(favoriteMaps) {
+            UserDefaults.standard.set(encoded, forKey: "FavoriteMaps")
+        }
     }
 
-    func addFavorite(mapName: String) {
-        favoriteMaps.insert(mapName)
+    func addFavorite(map: ButtonData) {
+        favoriteMaps.insert(map)
     }
 
-    func removeFavorite(mapName: String) {
-        favoriteMaps.remove(mapName)
+    func removeFavorite(map: ButtonData) {
+        favoriteMaps.remove(map)
     }
 }

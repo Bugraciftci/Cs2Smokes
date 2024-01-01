@@ -16,6 +16,7 @@ struct Cs2SmokeApp: App {
         WindowGroup {
             TabView {
                 ContentView()
+                    .environmentObject(userSettings)
                     .tabItem {
                         Image(systemName: "house.fill")
                         Text("Home")
@@ -23,6 +24,7 @@ struct Cs2SmokeApp: App {
                     .tag(0)
                 
                 FavoritesView() // New Favorites Tab
+                    .environmentObject(userSettings)
                     .tabItem {
                         Image(systemName: "star.fill")
                         Text("Favorites")

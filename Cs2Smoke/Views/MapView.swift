@@ -101,24 +101,25 @@ struct MapView: View {
                                     Text(buttonData.title)
                                     Spacer()
                                     Button(action: {
-                                        if userSettings.favoriteMaps.contains(buttonData.title) {
-                                            userSettings.removeFavorite(mapName: buttonData.title)
+                                        if userSettings.favoriteMaps.contains(where: { $0.title == buttonData.title }) {
+                                            userSettings.removeFavorite(map: buttonData)
                                         } else {
-                                            userSettings.addFavorite(mapName: buttonData.title)
+                                            userSettings.addFavorite(map: buttonData)
                                         }
                                     }) {
-                                        Image(systemName: userSettings.favoriteMaps.contains(buttonData.title) ? "star.fill" : "star")
+                                        Image(systemName: userSettings.favoriteMaps.contains(where: { $0.title == buttonData.title }) ? "star.fill" : "star")
                                             .foregroundColor(.yellow)
                                     }
+
                                 }
                             }
                         }
                     }
-                    
-                                    }
-                                }
-                            }        .navigationViewStyle(StackNavigationViewStyle())
-                .sheet(isPresented: $isShowingVideoView, content: {
+                }
+            }
+        }
+            .navigationViewStyle(StackNavigationViewStyle())
+            .sheet(isPresented: $isShowingVideoView, content: {
                     if let videoURL = selectedVideoURL {
                         VideoView(videoURL: videoURL)
                     }})
